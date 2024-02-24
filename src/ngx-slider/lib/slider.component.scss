@@ -39,11 +39,18 @@
         }
       }
     }
-
+  
     .ngx-slider-span {
       white-space: nowrap;
       position: absolute;
       display: inline-block;
+    }
+
+    .ngx-slider-horizontal-line {
+      height: 2px;
+      background-color: #000;
+      position: absolute;
+      bottom: -10px;
     }
 
     .ngx-slider-base {
@@ -136,6 +143,21 @@
       &.ngx-slider-limit {
         color: $limitLabelTextColor;
       }
+    }
+    .ngx-slider-horizontal-line-start,
+    .ngx-slider-horizontal-line,
+    .ngx-slider-horizontal-line-end {
+      height: 2px;
+      background-color: #000;
+    }
+    
+    .ngx-slider-horizontal-line-start,
+    .ngx-slider-horizontal-line-end {
+      width: 50%; /* Adjust based on your design */
+    }
+    
+    .ngx-slider-horizontal-line {
+      width: 100%; /* Adjust if necessary */
     }
 
     .ngx-slider-ticks {
@@ -237,6 +259,12 @@
         top: 0;
         z-index: 1;
       }
+      .horizontal-line {
+        position: absolute;
+        bottom: -5px; // Adjust based on your slider's layout
+        height: 2px;
+        background-color: #000;
+      }
 
       .ngx-slider-tick {
         vertical-align: middle;
@@ -303,6 +331,57 @@
       .ngx-slider-tick {
         transition: background-color linear $animationDuration;
       }
+
+      .horizontal-line {
+        position: absolute;
+        bottom: -50px; // Adjust based on your slider's layout
+        height: 2px;
+        background-color: #000;
+        margin-top: 50px;
+      }
+
+      .vertical-line-start, .vertical-line-end {
+        position: absolute;
+        height: 14px; /* Height of the vertical line */
+        width: 2px; /* Width of the vertical line */
+        background-color: #000;
+        bottom: 100%; /* Aligns the bottom of the vertical line with the top of the horizontal line */
+      }
+      
+      .vertical-line-start {
+        left: 0;
+      }
+      .vertical-line-end {
+        right: 0;
+      }
+
+      .vertical-line-start::after, .vertical-line-end::after {
+        content: '';
+        position: absolute;
+        top: -3px; /* Adjust this value to position the arrow correctly */
+        left: 50%;
+        transform: translateX(-50%);
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-bottom: 5px solid #000; /* Arrow color */
+        width: 0;
+        height: 0;
+      }
+
+      .line-label {
+        position: absolute;
+        text-align: center;
+        width: 100%; /* Makes sure the text spans the full width of the line */
+        bottom: -80px; /* Adjust based on your layout */
+      }
     }
   }
+/*   .horizontal-line {
+    position: absolute;
+    bottom: -5px; // Adjust based on your slider's layout
+    height: 2px;
+    background-color: #000;
+  } */
+
+  
 }
