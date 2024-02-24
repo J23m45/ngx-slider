@@ -117,18 +117,48 @@
 
   <span *ngFor="let t of options.CustomLabelRangeArray; let i = index">
     <span
+      *ngIf="!t.singlepoint"
       class="horizontal-line"
       [ngStyle]="
-        getLineStyle(t.startValue, t.endValue, t.offset, t.widthAdjustment)
+        getLineStyle(
+          t.startValue,
+          t.endValue,
+          t.offset,
+          t.widthAdjustment,
+          t.singlepoint
+        )
       "
     >
       <span class="vertical-line-start"></span>
       <span class="vertical-line-end"></span>
     </span>
+
+    <span
+      *ngIf="t.singlepoint"
+      class="horizontal-line at-zero"
+      [ngStyle]="
+        getLineStyle(
+          t.startValue,
+          t.endValue,
+          t.offset,
+          t.widthAdjustment,
+          t.singlepoint
+        )
+      "
+    >
+      <span class="vertical-line-start-at-zero"></span>
+    </span>
+
     <span
       class="line-label"
       [ngStyle]="
-        getLineStyle(t.startValue, t.endValue, t.offset, t.widthAdjustment)
+        getLineStyle(
+          t.startValue,
+          t.endValue,
+          t.offset,
+          t.widthAdjustment,
+          t.singlepoint
+        )
       "
       >{{ t.label }}</span
     >

@@ -181,7 +181,8 @@ export class SliderComponent
     startValue: number,
     endValue: number,
     offset: number,
-    widthAdjustment: number
+    widthAdjustment: number,
+    singlepoint: boolean
   ): any {
     const totalRange = this.options.ceil - this.options.floor;
 
