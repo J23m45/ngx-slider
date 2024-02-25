@@ -24,10 +24,7 @@ jobs:
     - name: Build
       run: |
         npm install
-        gulp
-  publish:
-        runs-on: ubuntu-latest
-        steps:
+
             - name: checkout
               uses: actions/checkout@v2
             - name: node
