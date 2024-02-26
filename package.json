@@ -1,6 +1,6 @@
 {
   "name": "test-ngx-slider-1",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Self-contained, mobile friendly slider component for Angular 5+ based on angularjs-slider",
   "keywords": [
     "slider",
